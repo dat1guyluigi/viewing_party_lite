@@ -16,8 +16,6 @@ RSpec.describe 'home page' do
   end
 
   it 'has a link to each users dashboard' do
-    expect(page).to have_content(@user.email)
-    
     click_link @user.email
 
     expect(current_path).to eq(user_path(@user.id))
