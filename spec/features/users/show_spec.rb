@@ -13,11 +13,11 @@ RSpec.describe 'show', type: :feature do
     it 'has a discover movies button' do
       click_button 'Discover Movies'
 
-      expect(current_path).to eq(user_movies_path(@user))
+      expect(current_path).to eq(user_discover_path(@user))
     end
 
     it 'has a viewing parties section' do
-      
+
       expect(page).to have_content "#{@user.name}'s Viewing Parties:"
     end
   end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: %i[new create show] do
-    resources :movies, only: [:index]
+    get '/discover', to: 'discover#index'
+    # resources :discover, only: [:index]
   end
 end
