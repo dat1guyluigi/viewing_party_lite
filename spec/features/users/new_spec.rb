@@ -21,8 +21,7 @@ RSpec.describe 'new user page' do
     fill_in 'Email', with: @user.email
     click_button 'Create Account'
 
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content('New user created.')
+    visit root_path
     expect(page).to have_content(@user.email)
   end
 
