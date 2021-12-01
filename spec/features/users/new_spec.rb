@@ -16,19 +16,19 @@ RSpec.describe 'new user page' do
     expect(current_path).to eq(root_path)
   end
 
-  # it 'creates a new user' do
-  #   fill_in 'Name', with: @user.name
-  #   fill_in 'Email', with: @user.email
-  #   click_button 'Create Account'
+  it 'creates a new user' do
+    fill_in 'Name', with: "Tim"
+    fill_in 'Email', with: "Tim@tim.com"
+    click_button 'Create Account'
 
-  #   visit root_path
-  #   expect(page).to have_content(@user.email)
-  # end
+    visit root_path
+    expect(page).to have_content("Tim@tim.com")
+  end
 
   it 'does not create user with missing fields' do
     fill_in 'Email', with: @user.email
     click_button 'Create Account'
-    
+
     expect(current_path).to eq(new_user_path)
     expect(page).to_not have_content(@user.email)
     expect(page).to have_content('Please try again.')
