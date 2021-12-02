@@ -19,8 +19,5 @@ RSpec.describe MovieService do
       search = MovieService.search_movies('The Shawshank Redemption')
 
       expect(search).to be_a(Hash)
-      #get help pls :( trying to return specific name
-      #expect(search[:title]).to eq("The Shawshank Redemption")
-    end
   end
 end
