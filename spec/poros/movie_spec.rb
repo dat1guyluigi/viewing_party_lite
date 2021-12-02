@@ -7,7 +7,7 @@ RSpec.describe Movie do
       vote_average: '6',
       runtime: '120',
       genres: 'Comedy',
-      summary: 'crazy step brothers',
+      overview: 'crazy step brothers',
       cast: 'Will Ferrell',
       reviews: 'Super funny'
       }
@@ -19,7 +19,7 @@ RSpec.describe Movie do
       expect(movie.vote_average).to eq('6')
       expect(movie.runtime).to eq('120')
       expect(movie.genres).to eq('Comedy')
-      expect(movie.summary).to eq('crazy step brothers')
+      expect(movie.overview).to eq('crazy step brothers')
       expect(movie.cast).to eq('Will Ferrell')
       expect(movie.reviews).to eq('Super funny')
   end

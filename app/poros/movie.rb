@@ -3,7 +3,7 @@ class Movie
               :vote_average,
               :runtime,
               :genres,
-              :summary,
+              :overview,
               :cast,
               :reviews,
               :id
@@ -14,7 +14,7 @@ class Movie
     @vote_average = data[:vote_average]
     @runtime = data[:runtime]
     @genres = data[:genres]
-    @summary = data[:summary]
+    @overview = data[:overview]
     @cast = data[:cast]
     @reviews = data[:reviews]
     @id = data[:id]
