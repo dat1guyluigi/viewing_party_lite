@@ -1,5 +1,5 @@
 <h1>Top Rated Movies</h1>
 
 <% @movies.each do |movie| %>
-  <p><b>Title:</b> <%= movie.title %> <b>Rating:</b> <%= movie.vote_average %></p>
+  <p><b>Title:</b> <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %> <b>Rating:</b> <%= movie.vote_average %></p>
 <% end %>
