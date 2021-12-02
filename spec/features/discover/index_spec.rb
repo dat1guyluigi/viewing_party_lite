@@ -11,7 +11,14 @@ RSpec.describe 'Discover Index', type: :feature do
       
       click_button 'Top Rated Movies'
       
-      expect(current_path).to eq("/users/#{@user.id}/movies?q=top%20rated")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+    end
+
+    it 'has a search button' do
+      fill_in 'Search', with: 'Jurassic'
+      click_button 'Find Movies'
+
+      expect(current_path).to eq("/users/#{@user.id}/movies?q=Jurassic")
     end
   end
 end
