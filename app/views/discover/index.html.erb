@@ -5,6 +5,6 @@
 <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
   <%= f.label :search %>
   <br>
-  <%= f.text_field :search, label: "Search by Title" %>
+  <%= f.text_field :query, label: "Search by Title", placeholder: 'ex: Stepbrothers' %>
   <%= f.submit "Find Movies" %>
 <% end %>
