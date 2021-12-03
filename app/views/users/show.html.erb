@@ -3,3 +3,8 @@
 <%= button_to "Discover Movies",  user_discover_path(@user), method: :get%>
 <br>
 <h5><%= @user.name %>'s Viewing Parties:</h5>
+<% @user.parties.each do |party| %>
+  <div id="id-<%= party.id %>">
+  <% binding.pry %>
+  </div>
+<% end %>

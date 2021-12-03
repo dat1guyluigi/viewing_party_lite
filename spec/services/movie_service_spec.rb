@@ -14,7 +14,7 @@ RSpec.describe MovieService do
   end
 
 #create and add cassetes/vcr
-  describe 'movie search' do
+  describe 'movie search', :vcr do
     it 'searches for a movie' do
       search = MovieService.search_movies('The Shawshank Redemption')
 
@@ -23,7 +23,7 @@ RSpec.describe MovieService do
   end
 
   describe 'movie cast' do
-    it 'returns a movie cast' do
+    it 'returns a movie cast', :vcr do
       cast = MovieService.movie_cast(19404)
 
       expect(cast.first).to be_a(Hash)
