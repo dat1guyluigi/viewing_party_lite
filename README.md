@@ -6,7 +6,8 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 ## Contributors
 
-Matthew Kimball [Linkedin](https://github.com/mekimball)
+Matthew Kimball [Github](https://github.com/mekimball)
+Luis Arroyo [Github](https://github.com/dat1guyluigi)
 
 ## Setup for the use of the project
 
