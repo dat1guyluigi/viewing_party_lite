@@ -11,6 +11,9 @@ class MoviesController < ApplicationController
   end
 
   def show
-
-  end 
+    @movie = Movie.new(MovieService.movie(params[:id]))
+    @reviews = MovieFacade.reviews(params[:id])
+    @cast = MovieFacade.movie_cast(params[:id])
+    @user = User.find(params[:user_id])
+  end
 end
