@@ -25,6 +25,6 @@ RSpec.describe 'movie index page' do
     click_button 'Top Rated Movies'
     click_link 'The Godfather'
 
-    expect(page).to have_content('Movie Show page')
+    expect(page).to have_content('The Godfather')
   end
 end

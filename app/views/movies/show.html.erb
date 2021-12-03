@@ -1,1 +1,24 @@
-<h1>Movie Show page</h1>
+<h1><%= @movie.title %></h1>
+<br>
+<%= button_to 'Discover Page', user_discover_path(@user), method: :get %>
+<br><br>
+<img src="<%= @movie.image %>" width=200px>
+<br><br>
+<p><b>Vote Average: </b><%= @movie.vote_average %></p>
+
+<p><b>Runtime: </b><%= @movie.runtime %></p>
+
+<p><b>Genres: </b><% @movie.genres.each do |genre|  %>
+    <%= genre[:name] %>
+  <% end %></p>
+
+<p><b>Overview: </b><%= @movie.overview %></p>
+
+<p><b>Cast: </b><% @cast.each do |member| %>
+  <p><%= "#{member.name} as #{member.character}" %></p>
+  <% end %></p>
+
+<p><b>Reviews: </b><% @reviews.each do |review| %></p>
+  <p>Author: <%= review.author %></p>
+  <p><%= review.content %></p>
+  <% end %>
