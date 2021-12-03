@@ -6,7 +6,8 @@ class Movie
               :overview,
               :cast,
               :reviews,
-              :id
+              :id,
+              :image
 
 
   def initialize(data)
@@ -18,5 +19,6 @@ class Movie
     @cast = data[:cast]
     @reviews = data[:reviews]
     @id = data[:id]
+    @image = "https://image.tmdb.org/t/p/original#{data[:poster_path]}"
   end
 end
