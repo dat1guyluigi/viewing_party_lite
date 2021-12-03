@@ -1,0 +1,20 @@
+<h3>Create a Movie Party for <%= @movie[:title] %>
+
+<%= form_with url: "users/#{@user.id}/movies/#{@movie[:id]}/viewing_parties/new", method: :patch, local: true do |f| %>
+  <p><%= f.label :duration, 'Party Duration:' %>
+  <%= f.number_field :duration, value: @movie[:runtime], min: @movie[:runtime] %></p>
+
+  <p><%= f.label :start_time, 'Party Start Time:' %>
+  <%= f.number_field :start_time  %></p>
+
+  <p><%= f.label :date, 'Party Date:' %>
+  <%= f.text_field :date  %></p>
+    <% @users.each do |user| %>
+    <br>
+    <% if user.id != @user.id  %>
+      <%= check_box_tag(user.email) %>
+      <%= label_tag(user.email, "#{user.email}") %>
+      <% end %>
+  <% end %>
+  <%= f.submit 'Create' %>
+<% end %>
