@@ -23,5 +23,11 @@ RSpec.describe MovieFacade do
     expect(review).to be_a(Array)
     expect(review.first).to be_a(Review)
     expect(review.first.author).to eq('MohamedElsharkawy')
+
+  it 'returns a movie cast' do
+    cast = MovieFacade.movie_cast(500)
+    expect(cast).to be_an(Array)
+    expect(cast.first.name).to eq("Harvey Keitel")
+    expect(cast.first.class).to eq(Actor)
   end
 end

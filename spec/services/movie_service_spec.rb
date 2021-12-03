@@ -20,4 +20,14 @@ RSpec.describe MovieService do
 
       expect(search).to be_a(Hash)
   end
+
+  describe 'movie cast' do
+    it 'returns a movie cast' do
+      cast = MovieService.movie_cast(19404)
+
+      expect(cast.first).to be_a(Hash)
+      expect(cast.length).to eq(10)
+      expect(cast.first[:name]).to eq("Shah Rukh Khan")
+    end
+  end
 end
