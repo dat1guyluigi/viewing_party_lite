@@ -31,4 +31,12 @@ RSpec.describe MovieService do
       expect(cast.first[:name]).to eq("Shah Rukh Khan")
     end
   end
+
+  describe 'single movie' do
+    it 'returns a movie by its id' do
+      movie = MovieService.movie(19404)
+
+      expect(movie[:id]).to eq(19404)
+    end
+  end
 end
