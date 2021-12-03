@@ -4,9 +4,12 @@
 
 Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
+The [Move DB API](https://developers.themoviedb.org/3/getting-started/introduction) was used for this application.
+
 ## Contributors
 
 Matthew Kimball [Github](https://github.com/mekimball)
+
 Luis Arroyo [Github](https://github.com/dat1guyluigi)
 
 ## Setup for the use of the project
