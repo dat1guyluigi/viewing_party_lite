@@ -18,4 +18,11 @@ class MovieFacade
       Movie.new(data)
     end
   end
+
+  def self.movie_cast(movie_id)
+    cast = MovieService.movie_cast(movie_id)
+    cast.map do |actor|
+      Actor.new(actor)
+    end
+  end
 end

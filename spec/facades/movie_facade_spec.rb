@@ -16,4 +16,10 @@ RSpec.describe MovieFacade do
     expect(search.first).to be_a(Movie)
     expect(search.first.title).to eq('The Shawshank Redemption')
   end
+  it 'returns a movie cast' do
+    cast = MovieFacade.movie_cast(500)
+    expect(cast).to be_an(Array)
+    expect(cast.first.name).to eq("Harvey Keitel")
+    expect(cast.first.class).to eq(Actor)
+  end
 end
