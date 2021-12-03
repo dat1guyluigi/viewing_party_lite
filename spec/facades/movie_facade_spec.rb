@@ -16,6 +16,14 @@ RSpec.describe MovieFacade do
     expect(search.first).to be_a(Movie)
     expect(search.first.title).to eq('The Shawshank Redemption')
   end
+
+  it 'gets review information' do
+    review = MovieFacade.reviews('19404')
+
+    expect(review).to be_a(Array)
+    expect(review.first).to be_a(Review)
+    expect(review.first.author).to eq('MohamedElsharkawy')
+
   it 'returns a movie cast' do
     cast = MovieFacade.movie_cast(500)
     expect(cast).to be_an(Array)
