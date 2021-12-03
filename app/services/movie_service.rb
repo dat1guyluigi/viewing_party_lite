@@ -4,12 +4,19 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
     json[:results]
   end
-
+  
   def self.search_movies(query)
     response = conn.get('/3/search/movie') do |f|
       f.params['query'] = query
     end
     JSON.parse(response.body, symbolize_names: true)
+  end
+  
+  def self.movie_cast(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits?")
+      json = JSON.parse(response.body, symbolize_names: true)
+      cast = json[:cast]
+      cast[0..9]
   end
 
   def self.conn
