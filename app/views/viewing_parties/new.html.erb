@@ -1,6 +1,6 @@
 <h3>Create a Movie Party for <%= @movie[:title] %>
 
-<%= form_with url: "users/#{@user.id}/movies/#{@movie[:id]}/viewing_parties/new", method: :patch, local: true do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing_parties", local: true do |f| %>
   <p><%= f.label :duration, 'Party Duration:' %>
   <%= f.number_field :duration, value: @movie[:runtime], min: @movie[:runtime] %></p>
 
@@ -16,5 +16,6 @@
       <%= label_tag(user.email, "#{user.email}") %>
       <% end %>
   <% end %>
+    <%= f.hidden_field :movie_title => @movie[:title] %></p>
   <%= f.submit 'Create' %>
 <% end %>
