@@ -5,8 +5,8 @@ RSpec.describe 'show', type: :feature do
     @user_1 = User.create!(name: 'Sammy', email: 'sammysosa@yahoo.com')
     @user_2 = User.create!(name: 'Timmy', email: 'tim@yahoo.com')
 
-    @party_1 = Party.create!(date: '12/25/2021', length: 255, time: 1600, movie_id: 19404, host_id: @user_1.id)
-    @party_2 = Party.create!(date: '12/26/2021', length: 215, time: 1800, movie_id: 500, host_id: @user_2.id)
+    @party_1 = Party.create!(date: '12/25/2021', length: 255, time: 1600, movie_id: 19404, host_id: @user_1.id, movie_title: "This movie")
+    @party_2 = Party.create!(date: '12/26/2021', length: 215, time: 1800, movie_id: 500, host_id: @user_2.id, movie_title: "That movie")
 
     @userparty_1 = UserParty.create!(party_id: @party_1.id, user_id: @user_1.id)
     @userparty_2 = UserParty.create!(party_id: @party_1.id, user_id: @user_2.id)
@@ -17,7 +17,7 @@ RSpec.describe 'show', type: :feature do
   end
   describe 'user show page' do
     it 'has user information' do
-      expect(page).to have_content 'Welcome Sammy!'
+      expect(page).to have_content "Welcome #{@user_1.name}!"
     end
 
     it 'has a discover movies button' do
@@ -33,7 +33,19 @@ RSpec.describe 'show', type: :feature do
 
       it 'has movie info in viewing party' do
         within("#id-#{@party_1.id}") do
-          expect(page).to have content("")
+          
+          expect(page).to have_content("Title: #{@party_1.movie_title}")
+          expect(page).to have_content("Length: #{@party_1.length}")
+          expect(page).to have_content("Date: #{@party_1.date}")
+          expect(page).to have_content("Time: #{@party_1.time}")
+        end
+      end
+
+      it 'links to individual movie' do
+        within("#id-#{@party_1.id}") do
+          click_link "This movie"
+
+          expect(current_path).to eq(users/@user_1.id/movies/@movie_1.id)
         end
       end
     end

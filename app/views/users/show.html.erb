@@ -5,6 +5,17 @@
 <h5><%= @user.name %>'s Viewing Parties:</h5>
 <% @user.parties.each do |party| %>
   <div id="id-<%= party.id %>">
-  <% binding.pry %>
+  <%= link_to  "#{party.movie_title}", "users/#{@user.id}/movies/#{party.movie_id}" %>
+  <p>Movie Title: <%= party.movie_title %></p>
+  <p>Length: <%= party.length %></p>
+  <p>Date: <%= party.date %></p>
+  <p>Time: <%= party.time %></p>
+    <p><% if party.host_id == @user.id %>
+      Hosting
+    <% else %>
+      Invited
+    <% end %></p>
+  <p>Invitees: <%=  %></p>
+
   </div>
 <% end %>

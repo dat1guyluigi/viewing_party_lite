@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    # @movie = MovieService.movie(movie_id)
   end
-
   def new
     @user = User.new
   end
