@@ -2,5 +2,4 @@
 
 <% @movies.each do |movie| %>
   <p><b>Title:</b> <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %> <b>Rating:</b> <%= movie.vote_average %></p>
-  <% binding.pry %>
 <% end %>

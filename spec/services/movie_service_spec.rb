@@ -19,6 +19,7 @@ RSpec.describe MovieService do
       search = MovieService.search_movies('The Shawshank Redemption')
 
       expect(search).to be_a(Hash)
+    end
   end
 
   describe 'movie cast' do
